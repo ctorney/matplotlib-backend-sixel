@@ -15,7 +15,7 @@ To install either run
  - `$ pip install --user matplotlib-backend-sixel`
 
 or clone this repo and run
- - `$cd matplotlib-backend-sixel && pip install . `
+ - `$ cd matplotlib-backend-sixel && pip install . `
 
 Configure matplotlib to use the module by either setting the
 environment variable `MPLBACKEND` to `module://matplotlib-backend-sixel`
@@ -44,6 +44,9 @@ In [1]: import matplotlib
 
 <plot is shown>
 ```
+Example output using Gnome terminal [compiled with SIXEL support](https://github.com/mate-desktop/mate-terminal/issues/410)
+
+![Example output](resources/demo.png)
 
 If you set your matplotlib to interactive mode via
 `matplotlib.pyplot.ion()` or by running python as
