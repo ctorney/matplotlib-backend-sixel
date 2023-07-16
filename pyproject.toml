@@ -1,7 +1,7 @@
 [project]
-name = "matplotlib-backend-kitty"
-version = "2.1.2"
-description = "show matplotlib plots directly in your kitty terminal"
+name = "matplotlib-backend-sixel"
+version = "1.0.0"
+description = "show matplotlib plots directly in your sixel-enabled terminal"
 readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -12,8 +12,8 @@ classifiers = [
 dependencies = [ "matplotlib" ]
 
 [project.urls]
-"Homepage" = "https://github.com/jktr/matplotlib-backend-kitty"
-"Bug Tracker" = "https://github.com/jktr/matplotlib-backend-kitty/issues"
+"Homepage" = "https://github.com/ctorney/matplotlib-backend-sixel"
+"Bug Tracker" = "https://github.com/ctorney/matplotlib-backend-sixel/issues"
 
 [build-system]
 requires = [ "setuptools>=61.0" ]
