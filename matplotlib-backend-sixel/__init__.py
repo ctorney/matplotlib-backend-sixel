@@ -7,7 +7,7 @@ import warnings
 
 from matplotlib import interactive, is_interactive
 from matplotlib._pylab_helpers import Gcf
-from matplotlib.backend_bases import (_Backend, FigureManagerBase)
+from matplotlib.backend_bases import _Backend, FigureManagerBase
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 
 
@@ -17,17 +17,18 @@ if sys.flags.interactive:
 
 
 class FigureManagerSixel(FigureManagerBase):
-
     def show(self):
-
         try:
-            print()
-            p = Popen(["convert", 'png:-', 'sixel:-'], stdin=PIPE)
-            self.canvas.figure.savefig(p.stdin, bbox_inches="tight", format='png') 
+            #print()
+            print('\n   ', end='')
+            p = Popen(["convert", "png:-", "sixel:-"], stdin=PIPE)
+            self.canvas.figure.savefig(p.stdin, bbox_inches="tight", format="png")
             p.stdin.close()
             p.wait()
         except FileNotFoundError:
-            warnings.warn("Unable to convert plot to sixel format: Imagemagick not found.")
+            warnings.warn(
+                "Unable to convert plot to sixel format: Imagemagick not found."
+            )
 
 
 class FigureCanvasSixel(FigureCanvasAgg):
@@ -36,7 +37,6 @@ class FigureCanvasSixel(FigureCanvasAgg):
 
 @_Backend.export
 class _BackendSixelAgg(_Backend):
-
     FigureCanvas = FigureCanvasSixel
     FigureManager = FigureManagerSixel
 
