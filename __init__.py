@@ -1,1 +1,1 @@
-matplotlib-backend-kitty/__init__.py
+matplotlib-backend-sixel/__init__.py
