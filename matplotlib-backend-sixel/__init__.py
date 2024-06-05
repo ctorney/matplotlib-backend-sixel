@@ -20,7 +20,7 @@ class FigureManagerSixel(FigureManagerBase):
     def show(self):
         try:
             print('\n   ', end='')
-            p = Popen(["convert", "-bordercolor", "gray", "-border", "2", "png:-", "sixel:-"], stdin=PIPE)
+            p = Popen(["magick", "-bordercolor", "gray", "png:-", "-border", "2", "sixel:-"], stdin=PIPE)
             self.canvas.figure.savefig(p.stdin, bbox_inches="tight", format="png")
             p.stdin.close()
             p.wait()
